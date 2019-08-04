@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Will Holland: A Tribute Page</title>
+<meta charset="UTF-8">
+        <!-- FONT LINKS -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Crimson+Pro|Josefin+Sans|IBM+Plex+Mono|Quicksand|Bungee+Outline&display=swap" rel="stylesheet">
+<style>
+     /* HTML Root */
+     html {
+        font-size: 16px;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: white;
+    }
+
+    /* Links Styling */
+	a:link {
+  		color: white;
+	}
+	a:visited {
+  		color: white;
+	}
+	a:hover {
+  		color: white;
+	}
+	a:active {
+  		color: white;
+	}
+
+    /* Header */
+        /* Header Logo */
+        .logo {
+            display: inline-block;
+            align-self: flex-start;
+            justify-self: flex-start;
+            height: 48px;
+            margin: 0 auto;
+            padding: 0px 0px 5px 0px;
+            opacity: 1 !important;
+            
+        }
+
+    /* Navbar */
+        /* Navbar Container */
+        .navbar {
+            display: flex;
+            position: relative;
+            height: 65px;
+            justify-content: space-evenly;
+            align-content: center;
+            align-items: flex-start;
+            background-image: linear-gradient(black,#333333);
+            font-family: 'IBM Plex Mono', sans-serif;
+            opacity: 0.7;
+            box-shadow: 0 0 25px, 0, black;
+            z-index: 10;
+        }
+                /* Navbar Links */
+                .navbar a {
+                    display: flex;
+                    list-style-type: none;
+                    float: none;
+                    font-size: 1.5rem;
+                    color: white;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                } 
+                /* Dropdown Container */
+                .links {
+                    float: none;
+                    overflow: hidden;
+                }
+                /* Links Button */
+                .links .linksbutton {
+                    font-size: 1.5rem;
+                    font-family: inherit;
+                    background-color: inherit;
+                    color: white;
+                    border: none;
+                    outline: none;
+                    margin: 0;
+                    padding: 14px 16px;
+                }  
+                        /* Hover Color */
+                        .navbar a:hover, .links:hover .linksbutton {
+                            color: orangered;
+                        }
+                /* Dropdown Content */
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    text-align: center;
+                    background-color: black;
+                    width: 160px;
+                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                }
+                /* Dropdown Links */
+                .dropdown-content a {
+                    float: none;
+                    color: white;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: block;
+                    text-align: left;
+                    font-size: 1.5rem;
+                }
+                        /* Dropdown Links Hover Color */
+                        .dropdown-content a:hover {
+                            color:teal;
+                        }
+                        /* Show Dropdown Menu on Hover */
+                        .links:hover .dropdown-content {
+                            display: block;
+                        }
+
+
+
+    /* Image Container */
+    .image-container, #img-div {
+        display: flex;
+        position: relative;
+        text-align: center;
+        color: white;
+    }           
+            /* Landing Image */
+            .landing-image, #image {
+                /* display: flex; */
+                position: relative;
+                width: 100%;
+                max-width: 100%;
+                height: 780px;
+                z-index: 1;
+            }
+            /* Landing Title */
+            .landing-title, #title {
+                position: absolute;
+                top: 80px;
+                right: 0px;
+                text-align: right;
+                font-family: 'Bungee Outline', monospace;
+                color: orangered;
+                font-size: 7em;
+                opacity: 0.8;
+                line-height: 0;
+                margin: 0;
+                padding: 0;
+                z-index: 2;
+            }
+            /* Landing Paragraph */
+            .landing-paragraph {
+                position: absolute;
+                top: 120px;
+                right: 10px;
+                font-size: 3em;
+                font-family: 'Bungee Outline', sans-serif;
+                color: white;
+                opacity: 0.7;
+                text-align: right;
+                line-height: 0.5;
+                margin: 0;
+                padding: 0;
+                z-index: 2;
+            }
+            /* Image Caption */
+            .image-caption, #img-caption {
+                position: absolute;
+                line-height: 0;
+                bottom: 10px;
+                right: 5px;
+                font-size: 20px;
+                font-family: 'Quicksand', sans-serif;
+                color: orangered;
+                text-align: right;
+                text-shadow: 0 0 0 #000, -1px -1px 0 #000, -1px -1px #000, -1px -1px 0 #000;
+                z-index: 3;
+            }
+            /* Image Caption Background */
+            .caption-background {
+                background-color: black;
+                opacity: 0.7;
+                border-radius: 5px;
+                z-index: 2;
+            }
+
+    /* Music Flexbox */
+            /* Music Container */
+            .music-container {
+                display: flex;
+                flex-flow: row wrap;
+                max-width: 100%;
+                max-height: auto;
+                justify-content: space-evenly;
+                align-content: flex-start;
+                align-items: flex-start;
+                padding: 10px 10px 10px 10px;
+                margin: 10px 10px 10px 10px;
+            }
+            /* Player Child */
+            .player-child {
+                display: flex;
+                float: right;
+                align-self: flex-start;
+                flex-wrap: wrap;
+                flex: 1 1 auto;
+                max-width: 300px;
+                height: auto;
+            }
+            /* Spotify Follow */
+            .spotify {
+                display: flex;
+                max-height: auto;
+                padding: 15px 0 0 50px;
+            }
+            /* Music Text Title */
+            .title-text {
+                display: flex;
+                color: orangered;
+                background-color: gray;
+                align-self: flex-start;
+                justify-self: flex-start;
+                flex: 1 1 auto;
+                width: 100px;
+                max-width: 250px;
+                font-size: 1.8em;
+                font-family: 'IBM Plex Mono', sans-serif;
+                line-height: 0;
+                padding: 0px 20px 0px 0px;
+                margin: 00px 20px 0px 0px;
+
+            }
+            /* Music Text Child */
+            .music-text-child {
+                display: flex;
+                max-height: auto;
+                flex: 1 1 auto;
+                max-width: 1000px;
+                background-color: grey;
+                align-self: flex start;
+                text-align: left;
+                font-family: 'Raleway', sans-serif;
+                font-size: 1em;
+                font-weight: lighter !important;
+                line-height: 1.5;
+                padding: 0px;
+                margin: 0px;
+            }
+                    /* Text Properties */
+                    .text-prop {
+                        font-family: 'Montserrat';
+                        font-style: normal;
+                        font-weight: 200;
+                        font-size: 1.4em;
+                        line-height: 1.5;
+                        text-align: left;
+                        opacity: 0.8;
+
+                    }
+    
+    /* Discogs/Newsletter Flexbox */
+            /* Discogs/Newsletter Container */
+            .discog-news-container {
+                display: flex;
+                flex-flow: nowrap;
+                justify-content: space-between;
+                align-items: flex-start;
+                align-content: flex-start;
+                max-width: 100%;
+                max-height: auto;
+                padding: 10px 10px 10px 10px;
+                margin: 10px 10px 10px 10px;
+            }
+                    /* Discog Title Child */
+                        .discog-title {
+                        display: inline-block;
+                        flex: 1 1 auto;
+                        width: 100px;
+                        max-width: 200px;
+                        color: orangered;
+                        align-self: flex-start;
+                        justify-self: flex-start;
+                        text-align: left;
+                        font-size: 1.8em;
+                        font-family: 'IBM Plex Mono', sans-serif;
+                        line-height: 0;
+                        padding: 0px 0px 0px 0px;
+                        margin: 0px 0px 0px 0px;
+                    }
+                    /* Discog Text Child */
+                        .discog-text {
+                        display: inline-block;
+                        flex: 1 1 auto;
+                        background-color:grey;
+                        max-height: auto;
+                        max-width: 1000px;
+                        align-self: flex start;
+                        text-align: left;
+                        font-family: 'Raleway', sans-serif;
+                        font-size: 1em;
+                        font-weight: lighter !important;
+                        line-height: 1.6;
+                        padding: 0px;
+                        margin: 0px;
+                    }
+                            /* Background */
+                            .discog-background {
+                                background-color:gray;
+                                opacity: 0.4;
+                            }
+                    /* Newsletter Child */
+                        .news-child {
+                            display: inline-block;
+                            flex: 0 1 auto;
+                            background-color: slateblue;
+                            text-align: center;
+                            max-width: 300px;
+                            max-height: auto;
+                            line-height: 1.5;
+                    }
+                    /* Text Input */
+                    .text-box {
+                        width: 250px;
+                        height: 30px;
+                        text-align: center;
+                        font-family: 'Montserrat', sans-serif;
+                        font-size: 1em;
+                    }
+                    /* Submit Button */
+                    .submit-button {
+                        width: 100px;
+                        height: 20px;
+                        font-family: 'Montserrat', sans-serif;
+                        font-size: 0.5em;
+                    }
+
+</style>
+</head>
+<body>
+<header class="navbar">  
+            <div>
+                <a href="#home">
+                <img class="logo" src="/logo.png" alt="major curator logo">
+                </a>
+            </div>
+            <a href="#music"><b>Music</b></a>
+            <a href="#discography"><b>Discography</b></a>
+            <div class="links">
+                <button class="linksbutton"><b>Links</b></button>
+                <div class="dropdown-content">
+                    <a href="https://tru-thoughts.co.uk/artists/quantic/" target="_blank" rel="noopener noreferrer"><b>Tru Thoughts</b></a>
+                    <a href="https://www.facebook.com/quanticmusic/" target="_blank" rel="noopener noreferrer"><b>Facebook</b></a>
+                    <a href="https://www.instagram.com/quanticmusic/?hl=en" target="_blank" rel="noopener noreferrer"><b>Instagram</b></a>
+                    <a href="https://en.wikipedia.org/wiki/Will_Holland" target="_blank" rel="noopener noreferrer"><b>Wikipedia</b></a>
+                    <a href="https://quanticmusic.bandcamp.com/" target="_blank" rel="noopener noreferrer"> <b>Bandcamp</b></a>
+                    <a href="https://www.discogs.com/artist/161443-Will-Holland" target="_blank" rel="noopener noreferrer"><b>Discogs</b></a>
+                </div>
+            </div>
+            <a href="#news"><b>News</b></a>
+            <a href="#about-us"><b>About Us</b></a>
+</header>
+<main>
+    <div id="img-div" class="image-container">
+        <img id="image" class="landing-image" src="https://www.kanefm.com/wp-content/uploads/2015/08/Quantic-presents-The-Western-Transient-960x858@2x.jpg" alt="Will Holland presents Western Transients at Kane FM">
+        <div class="landing-text">
+            <div>    
+            <h1 class="landing-title">Will Holland</h1>
+            <div class="landing-paragraph">  
+                <p>Quantic.</p>
+                <p>The Limp Twins.</p>
+                <p>Flowering Inferno.</p>
+                <p>The Combo Barbaro.</p> 
+                <p>The Quantic Soul Orchestra.</p> 
+            </div>  
+            </div>
+        </div>
+        <div class="image-caption caption-background" id="img-caption" >
+            <p><b>Will Holland presents <i>Western Transients</i>, at <i>Kane FM</i></b></p>
+        </div>
+    </div>
+    
+    
+    <div class="music-container">
+            <div class="title-text">
+                <h2>Music</h2>
+            </div>
+            <div class="music-text-child">    
+                <p class="text-prop">Hailing from Bewdley, United Kingdom, Will Holland has become a heavy hitter in the latin inspired fusion music scene. 
+                    Originating under the pseudonym <b>'Quantic'</b> with the release of his first album <b>The 5th Exotic</b> in 2001 - 
+                    Holland's musical form has undergone dramatic change; covering a eclectic range of genres from trip-hop, funk, soul, jazz and finally 
+                    through to latin inspired electronica with his latest 2019 release <b>'Atlantic Oscillations'.</b><br><br>
+
+                    With eighteen albums (and counting) under his belt, Holland has been a prolific contributor to the music scene and has been dubbed a 
+                    "<a href="https://www.rollingstone.com/music/music-features/quantic-atlantic-oscillations-album-850064/" target="_blank" rel="noopener noreferrer">
+                    <b>One-Man Music Factory</b></a>" by <i>Rolling Stone</i> and there's no sign he is stopping anytime soon...<br><br>
+
+                    <strong><u>Expect: hip-hop style beats, latin influenced grooves, percussion and melodies, electronic overtones and unforgettable earworms that will be
+                    with you for days after...</u></strong>
+            </div>
+        <div class="player-child">
+            <div>
+            <iframe src="https://open.spotify.com/embed/artist/5ZMwoAjeDtLJ0XRwRTgaK8" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+            <br>
+            <div>
+            <iframe class="spotify" src="https://open.spotify.com/follow/1/?uri=spotify:artist:5ZMwoAjeDtLJ0XRwRTgaK8&size=detail&theme=dark" width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="discog-news-container">
+        <div class="discog-title">
+            <h2>Discog</h2>
+        </div>
+        <div class="discog-text">
+            <ul class="text-prop">
+                <li>2001 - <i>The 5<sup>th</sup> Exotic</i> (Quantic)</li>
+                <li>2002 - <i>Apricot Morning</i> (Quantic)</li>
+                <li>2003 - <i>Tales From Beyond The Groove</i> (The Limp Twins)</li>
+                <li>2003 - <i>Stampede</i> (The Quantic Soul Orchestra)</li>
+                <li>2004 - <i>Mishaps Happening</i> (Quantic)</li>
+                <li>2005 - <i>Pushin' On</i> (The Quantic Soul Orchestra</li>
+                <li>2006 - <i>One Off's B Sides and Remixes</i> (Quantic)</li>
+                <li>2006 - <i>An Announcement to Answer</i> (Quantic)</li>
+                <li>2006 - <i>I'm Thankful</i> (Spanky Wilson & The Quantic Soul Orchestra)</li>
+                <li>2007 - <i>Tropidélico</i> (The Quantic Soul Orchestra)</li>
+                <li>2008 - <i>The Death of a Revolution</i> (Flowering Inferno)</li>
+                <li>2009 - <i>Dog with a Rope</i> (Flowering Inferno)</li>
+                <li>2009 - <i>Trandition in Transition</i> (The Combo Bárbaro)</li>
+                <li>2010 - <i>Look Around the Corner</i> (Quantic & Alice Russell with The Combo Barbaro)</li>
+                <li>2011 - <i>The Best of Quantic</i> (Quantic)</li>
+                <li>2012 - <i>Los Miticos del Ritmo</i> (Los Miticos del Ritmo)</li>
+                <li>2012 - <i>Ondatrópica</i> (The Quantic Soul Orchestra)</li>
+                <li>2014 - <i>Magnetica</i> (Quantic)</li>
+                <li>2015 - <i>A New Constellation</i> (Quantic Presents The Western Transient)</li>
+                <li>2016 - <i>1000 Watts</i> (Quantic)</li>
+                <li>2017 - <i>Curao</i> (Quantic & Nidia Góngora)</li>
+                <li>2019 - <i>Atlantic Oscialltions</i></li>
+            </ul>
+        </div>
+        <div class="news-child text-prop">
+            <h2>Newsletter</h2>
+                <p>Sign up to our weekly or monthly newsletter to recieve the latest news on underground artists, upcoming events and the latest news!</p>
+                <form action="/submit email address">
+                <label><input type="radio" name="weekly-monthly">Weekly</label>
+                <label><input type="radio" name="weekly-monthly">Monthly</label>
+                <br>
+                <br>
+                <input class="text-box" type="text" placeholder="What's Your Email?" required>
+                <button class="submit-button" type="submit">Sign Up</button>
+                </form>
+                <br>
+        </div>
+    </div>
+
+</main>
+</body>
+</html>
