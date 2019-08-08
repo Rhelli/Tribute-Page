@@ -218,14 +218,13 @@
             /* Spotify Follow */
             .spotify {
                 display: flex;
+                justify-self: flex-start;
                 max-height: auto;
-                padding: 15px 0 0 50px;
             }
             /* Music Text Title */
             .title-text {
                 display: flex;
                 color: orangered;
-                background-color: gray;
                 align-self: flex-start;
                 justify-self: flex-start;
                 flex: 1 1 auto;
@@ -244,7 +243,6 @@
                 max-height: auto;
                 flex: 1 1 auto;
                 max-width: 1000px;
-                background-color: grey;
                 align-self: flex start;
                 text-align: left;
                 font-family: 'Raleway', sans-serif;
@@ -270,7 +268,7 @@
             /* Discogs/Newsletter Container */
             .discog-news-container {
                 display: flex;
-                flex-flow: nowrap;
+                flex-flow: row wrap;
                 justify-content: space-between;
                 align-items: flex-start;
                 align-content: flex-start;
@@ -299,7 +297,6 @@
                         .discog-text {
                         display: inline-block;
                         flex: 1 1 auto;
-                        background-color:grey;
                         max-height: auto;
                         max-width: 1000px;
                         align-self: flex start;
@@ -313,14 +310,12 @@
                     }
                             /* Background */
                             .discog-background {
-                                background-color:gray;
                                 opacity: 0.4;
                             }
                     /* Newsletter Child */
                         .news-child {
                             display: inline-block;
                             flex: 0 1 auto;
-                            background-color: slateblue;
                             text-align: center;
                             max-width: 300px;
                             max-height: auto;
@@ -347,8 +342,9 @@
             display: flex;
             flex-flow: row wrap;
             max-width: 100%;
-            justify-content: space-between;
-            align-content: center;
+            max-height: 300px;
+            justify-content: flex-start;
+            align-content: flex-start;
             align-items: flex-start;
             text-align: left;
             padding: 10px 10px 10px 10px;
@@ -356,39 +352,76 @@
         }
                 /* Footer About */
                 .footer-about {
-                    display: inline-block;
-                    max-width: 1000px;
-                    height: auto;
-                    font-family: inherit;
-                    font-size: 1.5em;
-                    background-color: grey;
-                }
+                        display: inline-block;
+                        flex: 1 1 auto;
+                        max-height: auto;
+                        max-width: 1000px;
+                        align-self: flex start;
+                        text-align: left;
+                        font-family: 'Raleway', sans-serif;
+                        font-size: 1em;
+                        font-weight: lighter !important;
+                        line-height: 1.6;
+                        padding: 0px;
+                        margin: 0px;
+                    }
                 /* Footer About Title */
                 .footer-about-title {
-                    font-size: 1.7em;
-                    background-color: slategray;
+                        display: inline-block;
+                        flex: 1 1 auto;
+                        height: auto;
+                        width: 100px;
+                        max-width: 200px;
+                        color: orangered;
+                        align-self: flex-start;
+                        justify-self: flex-start;
+                        text-align: left;
+                        font-size: 1.8em;
+                        font-family: 'IBM Plex Mono', sans-serif;
+                        line-height: 1;
+                        padding: 0px 0px 0px 0px;
+                        margin: 0px 0px 0px 0px;
                 }
 
                 /* Footer Suggestions */
                 .footer-suggestions {
-                    display: inline-block;
-                    max-width: 290px;
-                    height: auto;
-                    text-align: center;
-                    font-family: inherit;
-                    font-size: 1em;
-                    background-color:steelblue;
-                }
+                        display: inline-block;
+                        flex: 0 1 auto;
+                        text-align: center;
+                        font-family: 'Montserrat', sans-serif;
+                        max-width: 300px;
+                        max-height: auto;
+                        line-height: 1.2;
+                    }
                 /* Footer Suggestions Title */
                 .footer-sug-title {
-                    font-size: 2em;
-                    background-color: gray;
+                        font-size: 2em;
                 }
                 /* Suggestions Text Boxes */
-                .sug-text {
-                    width: 200px;
-                    height: 20px;
-                }
+                    /* Details Text */
+                    .sug-details-text {
+                        width: 200px;
+                        height: 20px;
+                        text-align: center;
+                        font-family: 'Montserrat', sans-serif;
+                        font-size: 0.8em;
+                    }
+                    /* Suggestions Text */
+                    .sug-text {
+                        width: 250px;
+                        height: 80px;
+                        text-align: center;
+                        font-family: 'Montserrat', sans-serif;
+                        font-size: 1.3em;
+                    }
+                    /* Suggestions Submit */
+                    .sug-submit {
+                        width: 100px;
+                        height: 20px;
+                        font-family: 'Montserrat', sans-serif;
+                        font-size: 0.8em;
+                    }
+               
 
 
 </style>
@@ -508,11 +541,12 @@
                 </form>
                 <br>
         </div>
+        
     </div>
 
-    <footer class="footer">
+    <div class="footer">
         <div class="footer-about-title">
-            <h2>About Us</h2>
+            <h2>About<br> Us</h2>
         </div>
         <div class="footer-about">
             <p>&copy;Major Curator 2019 is a non-profit, non-violent, vegan friendly, non-existant entity. If you have any concerns, whether they be legal, support based,
@@ -520,20 +554,19 @@
             Will Holland, the artist in question and rhelli, this sites creator.
             </p>
         </div>
-        <div class="footer-suggestions">
+        <!-- <div class="footer-suggestions">
             <h2 class="footer-sug-title">Suggestions</h2>
         <div>
             <p>If you have any suggestions on how to make this website better or how to make the world a better place, please feel free to comment below!</p>
             <form action="/submit your comment">
-            <input class="sug-text" type="text" placeholder="What's Your Name?" required><br><br>
-            <input class="sug-text" type="text" placeholder="What's Your Email Address?" required><br><br>
-            <input type="text" placeholder="Your Suggestions" required>
-            <button type="submit">Submit</button>
-            </form><br><br><br>
+            <input class="sug-details-text" type="text" placeholder="What's Your Name?" required><br><br>
+            <input class="sug-details-text" type="text" placeholder="What's Your Email Address?" required><br><br>
+            <input class="sug-text" type="text" placeholder="Your Suggestions" required><br><br>
+            <button class="sug-submit" type="submit">Submit</button>
+            </form><br><br>
         </div>
-        </div>
-    </footer>
-
+        </div> -->
+    </div>
 </main>
 </body>
 </html>
